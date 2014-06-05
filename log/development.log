@@ -830,3 +830,12 @@ Migrating to CreateUsers (20140604165448)
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (49.0ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "username") VALUES (?, ?, ?)  [["created_at", Wed, 04 Jun 2014 17:07:51 UTC +00:00], ["updated_at", Wed, 04 Jun 2014 17:07:51 UTC +00:00], ["username", "Dave Huff"]]
   [1m[36m (334.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-04 13:19:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 0.0ms)

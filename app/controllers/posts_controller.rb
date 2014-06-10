@@ -15,15 +15,26 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
-  end
- 
-  def edit
+    @post = Post.new(post_params)
 
+    if @post.save
+      flash[:notice] = 'Your post was created.'
+      redirect_to posts_path
+    else
+      render 'new'
+    end
+    
+  end
+
+  def edit
   end
 
   def update
-
   end
-  
+
+  private
+
+  def post_params
+    params.require(:post).permit!
+  end
 end

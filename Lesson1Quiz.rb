@@ -11,7 +11,7 @@
       end
 
       class Issue < ActiveRecord::Base
-        belongs_to :projects, foreign_key: :project_id # would default to this
+        belongs_to :project, foreign_key: :project_id # would default to this
       end
 #9 ) 
       class Animal < ActiveRecord::Base

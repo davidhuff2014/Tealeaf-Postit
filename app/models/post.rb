@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-# setting up relationship to user
+# setting up relationship to tables note the class_name
 class Post < ActiveRecord::Base
   belongs_to :creator, foreign_key: 'user_id', class_name: 'User'
   has_many :comments

@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-# setting up relationship to posts
+# setting up relationships to both posts and comments
 class User < ActiveRecord::Base
   has_many :posts
   has_many :comments

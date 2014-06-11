@@ -1,3 +1,14 @@
+<% if @comment.errors.any? %>
+  <div class='alert alert-error'>
+  <h4>There were some errors:</h4>
+  <ul>
+    <% @comment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <p>
   <%= render @post.categories %>
 </p>

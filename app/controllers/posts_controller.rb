@@ -20,7 +20,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.creator = User.first  # TODO: for dev only until we have authentication
+    @post.creator = User.first  # TODO: only until we have authentication
+
     if @post.save
       flash[:notice] = 'Your post was created.'
       redirect_to posts_path
@@ -29,8 +30,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit;  end
 
   def update
     if @post.update(post_params)

@@ -22,9 +22,11 @@
 <%= link_to 'go back to all posts', posts_path %>
 
 <h5>Create a comment:</h5>
+<div class='well'>
 <%= form_for [@post, @comment] do |f| %>
   <%= f.text_area :body %>
   <br/>
   <%= f.button :submit => nil, class: 'btn btn-primary' %>
 <% end %>
+</div>
   

@@ -9,14 +9,18 @@
   </div>
 <% end %>
 
-
+<div class='well'>
 <%= form_for @post do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, class: 'input-with-feedback' %>
   <br/>
-    <%= f.label :url %>
+  <%= f.label :url %>
   <%= f.text_field :url %>
+  <br/>
+  <%= f.label :description %>
+  <%= f.text_area :description, rows: 5, class: 'input-with-feedback' %>
   <br/>
   <%# = f.submit 'Create Post', class: 'btn btn-primary' %>
     <%= f.button :submit => nil, class: 'btn btn-primary' %>
 <% end %>
+</div>

@@ -8,8 +8,10 @@
       <h4><%= link_to post.title, post_path(post) %></h4>
       <p><%= post.description %></p>
       <p>
-      <%#= binding.pry %>
-        <span class='quiet'>posted by</span> <%#= post.creator.username %> # bypass for now
+      <%# = binding.pry %>
+      <span class='quiet'>posted by</span> <%= post.creator %>
+      <span class='quiet'>posted by</span> <%= post.creator.username %>
+        <span class='quiet'>posted by</span> <%#= post.creator.present? ? post.creator.username : 'No creator defined!' %> # bypass for now
         <small>at <%= post.created_at %></small>
       </p>
       <small>

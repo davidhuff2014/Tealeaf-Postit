@@ -14,8 +14,12 @@
   <% Category.all.each do |category| %>
     <li><%= link_to category.name, category_path(category) %></li>
   <% end %>
-  <li><%= link_to 'test1', '' %></li>
-  <li><%= link_to 'test2', '' %></li>
+  <li class='divider'></li>
+    <li><%= link_to(new_category_path) do %>
+      <i class='icon-plus'></i>
+      New Category
+      <% end %>
+    </li>
  </ul>
 </div>
 <div class='nav_item'>

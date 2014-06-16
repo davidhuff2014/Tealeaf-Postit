@@ -6,6 +6,18 @@
     <%= link_to 'New Post', new_post_path %>
   </li>
 </ul>
+<div class='btn-group nav_item'>
+ <%=  link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+  Categories <span class='caret'></span>
+ <% end %>
+ <ul class='dropdown-menu'>
+  <% Category.all.each do |category| %>
+    <li><%= link_to category.name, category_path(category) %></li>
+  <% end %>
+  <li><%= link_to 'test1', '' %></li>
+  <li><%= link_to 'test2', '' %></li>
+ </ul>
+</div>
 <div class='nav_item'>
  <%=  link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
 </div>

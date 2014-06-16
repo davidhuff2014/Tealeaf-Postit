@@ -1,3 +1,6 @@
+# encoding: UTF-8
+
+# routes and resources
 PostitTemplate::Application.routes.draw do
   root to: 'posts#index'
 
@@ -11,4 +14,6 @@ PostitTemplate::Application.routes.draw do
   resources :posts, except: [:destroy] do
     resources :comments, only: [:create]
   end
+
+  resources :categories, only: [:create, :new, :show]
 end

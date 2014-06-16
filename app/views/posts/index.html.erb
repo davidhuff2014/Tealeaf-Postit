@@ -9,9 +9,7 @@
       <p><%= post.description %></p>
       <p>
       <%# = binding.pry %>
-      <span class='quiet'>posted by</span> <%= post.creator %>
-      <span class='quiet'>posted by</span> <%= post.creator.username %>
-        <span class='quiet'>posted by</span> <%#= post.creator.present? ? post.creator.username : 'No creator defined!' %> # bypass for now
+        <span class='quiet'>posted by</span> <%= post.creator.present? ? post.creator.username : 'No creator defined!' %>
         <small>at <%= post.created_at %></small>
       </p>
       <small>

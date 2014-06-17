@@ -1,4 +1,4 @@
-<% if @comment.errors.any? %>
+<!-- <% if @comment.errors.any? %>
   <div class='row'>
     <div class='alert alert-error'>
       <h5>There were some errors:</h5>
@@ -9,7 +9,9 @@
       </ul>
     </div>
   </div>
-<% end %>
+<% end %> -->
+
+<%= render 'shared/errors', obj: @comment %>
 
 <p class='pull-right'>
  [<%= link_to 'edit this post', edit_post_path(@post) %>]

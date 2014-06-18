@@ -15,8 +15,16 @@
   <%= @post.description %>
 </p>
 <hr/>
-<%= link_to 'go back to all posts', posts_path %>
 
+<h4>Comments:</h4>
+<hr/>
+<% @post.comments.each do |comment| %>
+<%# for comment in @post.comments %> 
+    <%= comment.body %>
+    <hr/>
+<% end %>
+
+<%= link_to 'go back to all posts', posts_path %>
 
 <h5>Create a comment:</h5>
 <div class='well'>

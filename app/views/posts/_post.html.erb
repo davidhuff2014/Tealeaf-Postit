@@ -7,7 +7,7 @@
     <%# = binding.pry %>
     <% #TODO DO NOT LEAVE THE FOLLOWING LINE IN PRODUCTION %>
       <span class='quiet'>posted by</span> <%= post.creator.present? ? post.creator.username : 'No creator defined!' %>
-      <small>at <%= post.created_at.to_formatted_s(:long) .%></small>
+      <small>at <%= post.created_at.to_formatted_s(:long) %></small>
     </p>
     <small>
       <span>

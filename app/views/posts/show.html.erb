@@ -37,7 +37,8 @@
       <div class='well span8'>
         <em>"<%= comment.body %>"</em>
         <span class='quiet'>by</span> <%= link_to comment.creator.present? ? comment.creator.username : 'No creator defined!' %>
-        <small>at <%= comment.created_at.to_formatted_s(:long) %></small>
+        <small>on <%= comment.created_at.to_formatted_s(:long) %></small>
+        <!-- <small>at <%#= display_datetime(comment.created_at) %></small> -->
       </div>
     <% end %>
 </div>

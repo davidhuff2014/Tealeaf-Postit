@@ -12,8 +12,10 @@ class CommentsController < ApplicationController
     @comment.creator = User.first
 
     if @comment.save
-      flash[:notice] = 'Your comment was added.'
-      redirect_to posts_path(@post)
+      # flash[:notice] = 'Your comment was added.'
+      # redirect_to posts_path(@post)
+      # doing it all in one
+      redirect_to posts_path(@post), notice: 'Your comment was added.'
     else
       render 'posts/show' # this is a template file
     end

@@ -1,4 +1,4 @@
-<%= render 'shared/errors', obj: @comment %>
+<%#= render 'shared/errors', obj: @comment %>
 <h4>Hi there, you're viewing <%= link_to @post.title, fix_url(@post.url) %></h4>
 
 <p class='pull-right'>
@@ -24,6 +24,8 @@
 <h4>Create a comment:</h4>
   <div class='control-group'>
     <%= form_for [@post, @comment] do |f| %>
+      <%= render 'shared/errors', obj: @comment %>
+
       <%= f.text_area :body,  rows: 5, class: 'input-with-feedback span5' %>
   </div>
     <%= f.button :submit => nil, class: 'btn btn-primary' %>
@@ -33,13 +35,14 @@
 <div class='span8'>
 <hr/>
   <h5>Comments:</h5>
+
     <% @post.comments.each do |comment| %>
       <div class='well span8'>
         <em>"<%= comment.body %>"</em>
         <span class='quiet'>by</span> <%= link_to comment.creator.present? ? comment.creator.username : 'No creator defined!' %>
-        <<small>on <%= comment.created_at %></small>
-<!--         <small>on <%#= comment.created_at.to_formatted_s(:long) %></small>
-        <small>at <%#= display_datetime(comment.created_at) %></small>  -->
+        <small>on <%= comment.created_at %></small>
+       <!--  <small>on <%#= comment.created_at.to_formatted_s(:long) %></small>
+        <small>at <%#= display_datetime(comment.created_at) %></small> -->
       </div>
     <% end %>
 </div>

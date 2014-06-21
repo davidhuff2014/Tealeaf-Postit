@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
       # doing it all in one
       redirect_to posts_path(@post), notice: 'Your comment was added.'
     else
+      @post.reload
       render 'posts/show' # this is a template file
     end
   end

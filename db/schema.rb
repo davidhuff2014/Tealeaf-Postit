@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620130809) do
+ActiveRecord::Schema.define(version: 20140621223224) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 20140620130809) do
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "comment_id"
-    t.integer  "post_id"
     t.string   "password_digest"
   end
 

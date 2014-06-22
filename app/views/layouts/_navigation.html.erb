@@ -5,6 +5,9 @@
   <li>
     <%= link_to 'New Post', new_post_path %>
   </li>
+  <li>
+    <%= link_to 'Register', register_path %>
+  </li>
 </ul>
 <div class='btn-group nav_item'>
  <%=  link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
@@ -16,12 +19,13 @@
   <% end %>
   <li class='divider'></li>
     <li><%= link_to(new_category_path) do %>
-      <i class='icon-plus'></i>
+      <li class='icon-plus'></i>
       New Category
       <% end %>
     </li>
  </ul>
 </div>
+
 <div class='nav_item'>
  <%=  link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
 </div>

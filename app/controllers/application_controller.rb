@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # makes available to the whole application
   helper_method :current_user, :logged_in?
 
   def current_user
@@ -15,6 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
+    # turns into booleen 
     !!current_user
   end
 

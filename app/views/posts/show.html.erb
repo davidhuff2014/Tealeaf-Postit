@@ -1,9 +1,11 @@
 <%#= render 'shared/errors', obj: @comment %>
 <h4>Hi there, you're viewing <%= link_to @post.title, fix_url(@post.url) %></h4>
 
-<p class='pull-right'>
- [<%= link_to 'edit this post', edit_post_path(@post) %>]
-</p>
+<% if logged_in? %>
+  <p class='pull-right'>
+   [<%= link_to 'edit this post', edit_post_path(@post) %>]
+  </p>
+<% end %>
 
 <p>
   <%= render @post.categories %>
@@ -20,17 +22,19 @@
 
 <hr/>
 
-<div class='well span8'>
-<h4>Create a comment:</h4>
-  <div class='control-group'>
-    <%= form_for [@post, @comment] do |f| %>
-      <%= render 'shared/errors', obj: @comment %>
+<% if logged_in? %>
+  <div class='well span8'>
+    <h4>Create a comment:</h4>
+      <div class='control-group'>
+        <%= form_for [@post, @comment] do |f| %>
+          <%= render 'shared/errors', obj: @comment %>
 
-      <%= f.text_area :body,  rows: 5, class: 'input-with-feedback span5' %>
-  </div>
-    <%= f.button :submit => nil, class: 'btn btn-primary' %>
-  <% end %>
-</div>
+          <%= f.text_area :body,  rows: 5, class: 'input-with-feedback span5' %>
+      </div>
+        <%= f.button :submit => nil, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+<% end %>
 
 <div class='span8'>
 <hr/>

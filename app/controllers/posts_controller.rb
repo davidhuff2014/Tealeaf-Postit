@@ -3,6 +3,7 @@
 # posts controller
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
+  before_action :require_user, except: [:index, :show]
   # 1. set up instance varialbe for action
   # 2. redirect based on some condition
 
@@ -20,7 +21,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.creator = User.first  # TODO: only until we have authentication
+    @post.creator = current_user
 
     if @post.save
       flash[:notice] = 'Your post was created.'

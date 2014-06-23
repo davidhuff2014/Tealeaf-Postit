@@ -2,21 +2,13 @@
   <li>
     <%= link_to "Postit!", root_path, :class => 'brand' %>
   </li>
-  <li>
-    <%= link_to 'New Post', new_post_path %>
-  </li>
-  # want to use the same method to hid anything in the nav bar only a user can do!!
   <% if logged_in? %>
     <li>Hi <%= current_user.username%></li>
     <li><%= link_to'Log out', logout_path %></li>
-  <% else %>
-  <li>
-    <%= link_to 'Register', register_path %>
+     <li>
+     <%=  link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
   </li>
-  <li><%= link_to 'Log in', login_path %></li>
-  <% end %>
-</ul>
-<div class='btn-group nav_item'>
+  <div class='btn-group nav_item'>
  <%=  link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
   Categories <span class='caret'></span>
  <% end %>
@@ -32,7 +24,13 @@
     </li>
  </ul>
 </div>
+  <% else %>
+  <li>
+    <%= link_to 'Register', register_path %>
+  </li>
+  <li><%= link_to 'Log in', login_path %></li>
+  <% end %>
+</ul>
 
-<div class='nav_item'>
- <%=  link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
-</div>
+
+

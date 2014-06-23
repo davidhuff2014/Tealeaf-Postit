@@ -31,7 +31,15 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit;  end
+  def edit  
+    # this is all my code!
+    if current_user == @post.creator
+      flash[:notice] = 'You are allowed to edit this post.'
+    else
+      flash[:notice] = 'You are not the creator of this post and cannot edit it.'
+      redirect_to posts_path
+    end
+  end
 
   def update
     if @post.update(post_params)

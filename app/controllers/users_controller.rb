@@ -32,7 +32,8 @@ class UsersController < ApplicationController
     # @user = User.find(params[:id])
     # render :new
         # this is all my code!
-    if current_user == @user.id
+        # binding.pry
+    if current_user.id == @user.id
       flash[:notice] = 'You are allowed to edit this user.'
     else
       flash[:alert] = 'You are not the creator of this user and cannot edit it.'

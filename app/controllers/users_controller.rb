@@ -6,6 +6,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    binding.pry
+    @posts = current_user.posts
+  end
+
   def create
     @user = User.new(user_params)
 

@@ -13,8 +13,9 @@
     <small>
       <span>
         <%= link_to("#{post.comments.size} comments", post_path(post)) %>
-        <% if logged_in? %>
-          (<%= link_to 'edit', edit_post_path(post) %>)
+        <%# if logged_in? %>
+        <% if current_user.id == post.user_id # my solution I wanted creator to have edit ability %>         
+          [<%= link_to 'edit this post', edit_post_path(post) %>]
         <% end %>
       </span>
     </small>

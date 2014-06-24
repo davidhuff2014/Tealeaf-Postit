@@ -3,7 +3,8 @@
 # Users controller
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  
+  before_action :require_user, except: [:new, :create, :show]
+
   def new
     @user = User.new
   end
@@ -30,6 +31,13 @@ class UsersController < ApplicationController
   def edit
     # @user = User.find(params[:id])
     # render :new
+        # this is all my code!
+    if current_user == @user.id
+      flash[:notice] = 'You are allowed to edit this user.'
+    else
+      flash[:alert] = 'You are not the creator of this user and cannot edit it.'
+      redirect_to posts_path
+    end
   end
 
   def update

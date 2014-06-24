@@ -8,7 +8,7 @@
 </ul>
 <div class='btn-group nav_item'>
   <%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do  %>
-    Categories <span class='carret'></span>
+    Categories <span class='caret'></span>
   <% end %>
   <ul class='dropdown-menu'>
     <% Category.all.each do |category| %>
@@ -31,8 +31,15 @@
   <div class='nav_item'>
     <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small'  %>
   </div>
-  <div class='nav_item'>
-    <%= link_to 'Logout', logout_path, class: 'btn btn-small'  %>
+  <div class='btn-group nav_item'>
+  <%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do  %>
+      <%= current_user.username %> <span class='caret'></span>
+  <% end %>
+  <ul class='dropdown-menu'>
+  <li><%= link_to '<i class="icon-pencil"></i>Edit Profile'.html_safe, edit_user_path(current_user.id) %></li>
+  <li><%= link_to '<i class="icon-user"></i>View Profile'.html_safe, user_path(current_user.id) %></li>
+    <li><%= link_to '<i class="icon-circle-arrow-left"></i>Logout'.html_safe, logout_path %></li>
+    </ul>
   </div>
 <% else # logged out %> 
   <div class='nav_item'>

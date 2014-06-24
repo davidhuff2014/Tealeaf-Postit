@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     if current_user == @post.creator
       flash[:notice] = 'You are allowed to edit this post.'
     else
-      flash[:notice] = 'You are not the creator of this post and cannot edit it.'
+      flash[:alert] = 'You are not the creator of this post and cannot edit it.'
       redirect_to posts_path
     end
   end

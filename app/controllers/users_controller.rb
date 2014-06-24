@@ -7,8 +7,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    binding.pry
-    @posts = current_user.posts
+    # binding.pry
+    @user = User.find(params[:id])
+    @posts = @user.posts
   end
 
   def create
@@ -25,11 +26,18 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
     # render :new
   end
 
   def update
-    
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:notice] = 'Profile has been updated.'
+      redirect_to user_path
+    else
+      render :edit
+    end    
   end
 
   private

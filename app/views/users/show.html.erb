@@ -1,6 +1,5 @@
-<% user = User.find_by(id: params[:id]) %>
-<%= render 'shared/content_title', title: "Profile: #{user.username}" %>
-
+<%= render 'shared/content_title', title: "Profile: #{@user.username}" %>
+<%# binding.pry %>
 <% @posts.each do |post| %>
  <%= render '/shared/post', post: post %>
 <% end %>

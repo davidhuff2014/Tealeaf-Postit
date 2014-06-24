@@ -2,13 +2,15 @@
 
 # Users controller
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
+  
   def new
     @user = User.new
   end
 
   def show
     # binding.pry
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @posts = @user.posts
   end
 
@@ -26,12 +28,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     # render :new
   end
 
   def update
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = 'Profile has been updated.'
       redirect_to user_path
@@ -44,5 +46,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :password)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

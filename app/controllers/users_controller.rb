@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
     if @user.save
       # flash[:notice] = 'You are registered.'
-      session[:user_id] = @user.id
+      session[:user_id] = @user.id # extra credit
       flash[:notice] = "Welcome, #{@user.username} you are now registered and logged in!"
       redirect_to root_path
     else

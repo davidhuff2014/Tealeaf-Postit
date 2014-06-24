@@ -5,7 +5,7 @@ PostitTemplate::Application.routes.draw do
   root to: 'posts#index'
 
   # add paths manually  becuase this is not an object
-  get 'register', to: 'users#new'
+  get '/register', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get  '/logout', to: 'sessions#destroy'
@@ -22,5 +22,5 @@ PostitTemplate::Application.routes.draw do
   end
 
   resources :categories, only: [:create, :new, :show]
-  resources :users, only: [:create]
+  resources :users, only: [:create, :show, :edit, :update]
 end

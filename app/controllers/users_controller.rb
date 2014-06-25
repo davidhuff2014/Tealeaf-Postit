@@ -3,7 +3,8 @@
 # Users controller
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :require_user, except: [:new, :create, :show]
+  # before_action :require_user, except: [:new, :create, :show]
+  before_action :require_same_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -33,19 +34,20 @@ class UsersController < ApplicationController
     # render :new
         # this is all my code!
         # binding.pry
-    if current_user.id == @user.id
-      flash[:notice] = 'You are allowed to edit this user.'
-    else
-      flash[:alert] = 'You are not the creator of this user and cannot edit it.'
-      redirect_to posts_path
-    end
+    # no longer need because of before_action require_same_user
+    # if current_user.id == @user.id
+    #   flash[:notice] = 'You are allowed to edit this user.'
+    # else
+    #   flash[:alert] = 'You are not the creator of this user and cannot edit it.'
+    #   redirect_to posts_path
+    # end
   end
 
   def update
     # @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = 'Profile has been updated.'
-      redirect_to user_path
+      redirect_to user_path(@user)
     else
       render :edit
     end    
@@ -59,5 +61,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:error] = 'You do not have authorization to perform this action'
+      redirect_to root_path
+    end
   end
 end

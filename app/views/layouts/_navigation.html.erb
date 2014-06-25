@@ -2,9 +2,6 @@
   <li>
     <%= link_to 'Postit!', root_path, :class => 'brand' %>
   </li>
-  <li>
-    <%= link_to 'link', '' %>
-  </li>
 </ul>
 <div class='btn-group nav_item'>
   <%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do  %>
@@ -36,6 +33,7 @@
       <%= current_user.username %> <span class='caret'></span>
   <% end %>
   <ul class='dropdown-menu'>
+  <!-- just done in a single line the above with a do could have been used -->
   <li><%= link_to '<i class="icon-pencil"></i>Edit Profile'.html_safe, edit_user_path(current_user.id) %></li>
   <li><%= link_to '<i class="icon-user"></i>View Profile'.html_safe, user_path(current_user.id) %></li>
     <li><%= link_to '<i class="icon-circle-arrow-left"></i>Logout'.html_safe, logout_path %></li>

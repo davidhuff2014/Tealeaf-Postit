@@ -4,6 +4,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
+  has_many :votes
 
   # has_secure_password # manually hanlding validations for project
   has_secure_password validations: false # to turn off validations

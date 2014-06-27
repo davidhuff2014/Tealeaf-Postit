@@ -9,6 +9,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    # alternate to sort by votes desc
+    # @posts = Post.all.sort_by{ |x| x.total_votes }.reverse 
   end
 
   def show
@@ -56,7 +58,7 @@ class PostsController < ApplicationController
     if @vote.valid?
       flash[:notice] = 'Your vote was counted.'
     else
-      flash[:notice] = 'Your vote was  not counted.'
+      flash[:error] = "You can only vote for \"#{@post.title}\" post one time."
     end
 
     redirect_to :back

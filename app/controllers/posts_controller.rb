@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   # 2. redirect based on some condition
 
   def index
-    @posts = Post.all
+    # @posts = Post.all
     # alternate to sort by votes desc
-    # @posts = Post.all.sort_by{ |x| x.total_votes }.reverse 
+    @posts = Post.all.sort_by{ |x| x.total_votes }.reverse 
   end
 
   def show
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
     if @vote.valid?
       flash[:notice] = 'Your vote was counted.'
     else
-      flash[:error] = "You can only vote for \"#{@post.title}\" post one time."
+      flash[:error] = "You can only vote for the \"#{@post.title}\" post one time."
     end
 
     redirect_to :back

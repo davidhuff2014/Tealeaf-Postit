@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
 
   # might want to relocate this, application controller?
   def total_votes
-    up_votes - down_votes
+    self.up_votes - self.down_votes
   end
 
   def up_votes

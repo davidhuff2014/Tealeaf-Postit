@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     # binding.pry
     # @user = User.find(params[:id])
     @posts = @user.posts
+    # @comments = @user.comments
+
   end
 
   def create

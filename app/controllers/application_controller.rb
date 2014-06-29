@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # makes available to the whole application
-  helper_method :current_user, :logged_in?, :require_user
+  helper_method :current_user, :logged_in?
 
   def current_user
     # if authenticated user, return the user obj

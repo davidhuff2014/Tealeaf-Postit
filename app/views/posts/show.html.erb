@@ -34,15 +34,16 @@
       </div>
         <%= f.button :submit => nil, name: 'commit', class: 'btn btn-primary' %>
       <% end %>
-    </div>
+  </div>
 <% end %>
 
-<div class='span8'>
-<hr/>
+<div class='row'>
+  </div class='span8'>
+  <hr/>
   <h5>Comments:</h5>
-
     <% @post.comments.each do |comment| %>
      <%= render '/shared/comment', comment: comment %>
     <% end %>
+  </div>
 </div>
   

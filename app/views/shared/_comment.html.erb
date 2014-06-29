@@ -1,7 +1,7 @@
 <% show_post ||= false %>
 <div class='row'>
   <div class='span0 well text-center'>
-  <%= binding.pry %>
+  <%#= binding.pry %>
     <%= link_to vote_post_comment_path(@post, comment, vote: true), method: 'post' do %>
       <i class='icon-arrow-up'></i>
     <% end %>
@@ -12,7 +12,7 @@
       <i class='icon-arrow-down'></i>
     <% end %>
   </div>
-  <div class='well span8'>
+  <div class='span8 well'>
     <em>"<%= comment.body %>"</em>
     <% if show_post %>
     on <%= link_to comment.post.title, post_path(comment.post) %>

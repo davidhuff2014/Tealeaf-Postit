@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     # @user = User.find(params[:id])
     @posts = @user.posts
     # @comments = @Comments.find(params[:id])
-    # @post = Post.find(params[:id])
+    # have to have the following line for my setup
+    @post = Post.find(params[:id])
   end
 
   def create

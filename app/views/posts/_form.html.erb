@@ -17,8 +17,9 @@
       <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
         <% cb.label(class: 'checkbox inline') { cb.check_box(class: 'checkbox') + cb.text } %>
       <% end %>
-    </div>
+      <br/>
     <%# = f.submit(@post.new_record? ? 'Create Post' : 'Update Post', class: 'btn btn-primary') %>
-      <%= f.button :submit => nil, name: 'commit', class: 'btn btn-primary' %>
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>    
   <% end %>
 </div>

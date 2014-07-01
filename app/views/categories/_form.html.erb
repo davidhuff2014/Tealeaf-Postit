@@ -3,8 +3,9 @@
     <div class='control-group'>
       <%= f.label :name %>
       <%= f.text_field :name, class: 'input-with-feedback' %>
-    </div>
+      <br/>
     <%# = f.submit(@post.new_record? ? 'Create Post' : 'Update Post', class: 'btn btn-primary') %>
-      <%= f.button :submit => nil, name: 'commit', class: 'btn btn-success' %>
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>  
   <% end %>
 </div>

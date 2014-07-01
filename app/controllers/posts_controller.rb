@@ -53,9 +53,9 @@ class PostsController < ApplicationController
   end
 
   def vote
-    @vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
-
-    if @vote.valid?
+    vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
+# binding.pry
+    if vote.valid?
       flash[:notice] = 'Your vote was counted.'
     else
       flash[:error] = "You can only vote for the \"#{@post.title}\" post one time."

@@ -57,11 +57,16 @@ class PostsController < ApplicationController
 # binding.pry
     if vote.valid?
       flash[:notice] = 'Your vote was counted.'
+      respond_to do |format|
+        format.html { redirect_to :back, notice: 'Your vote was counted.' }
+        format.js
+      end
     else
       flash[:error] = "You can only vote for the \"#{@post.title}\" post one time."
+      edirect_to :back 
     end
 
-    redirect_to :back
+    # redirect_to :back # superceded by respond_to block
   end
 
   private

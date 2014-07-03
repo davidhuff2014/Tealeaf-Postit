@@ -59,9 +59,9 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if @vote.valid?
-          flash[:notice] = "#{@post.creator.username}, your vote was counted."
+          flash[:notice] = "#{@current_user.username}, your vote was counted."
         else
-          flash[:error] = "#{@post.creator.username}, you can only vote for the \"#{@post.title}\" post one time."
+          flash[:error] = "#{@current_user.username}, you can only vote for the \"#{@post.title}\" post one time."
         end
         redirect_to :back
       end

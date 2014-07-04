@@ -6,8 +6,6 @@ class CommentsController < ApplicationController
   before_action :set_post
   
   def create
-    # @post = Post.find(params[:post_id])
-    # @post = Post.find(params[:post_id], params[:user_id])
 
     # @post.creator = User.first  # TODO: only until we have authentication
     # @comment = Comment.new(params.require(:comment).permit(:body))
@@ -47,6 +45,6 @@ class CommentsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by(slug: params[:post_id])
   end
 end

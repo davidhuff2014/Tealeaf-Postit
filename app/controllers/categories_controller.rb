@@ -10,7 +10,6 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    # @post = Post.find(params[:post_id])
     @category = Category.new(category_params)
 
     if @category.save

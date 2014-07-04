@@ -45,6 +45,6 @@ class CommentsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find_by(slug: params[:post_id])
+    @post = Post.find_by slug: params[:post_id]
   end
 end

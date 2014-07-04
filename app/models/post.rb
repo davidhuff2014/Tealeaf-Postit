@@ -28,6 +28,7 @@ class Post < ActiveRecord::Base
   end
 
   def generate_slug
+    # self.slug = self.title.sub(" ","-").downcase # prefer the following
     self.slug = self.title.parameterize # rails way without gem
   end
 

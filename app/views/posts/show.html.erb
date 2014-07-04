@@ -42,7 +42,7 @@
   </div class='span8'>
   <hr/>
   <h5>Comments:</h5>
-    <% @post.comments.each do |comment| %>
+    <% @post.reload.comments.each do |comment| %>
      <%= render '/shared/comment', comment: comment %>
     <% end %>
   </div>

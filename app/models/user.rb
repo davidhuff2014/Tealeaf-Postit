@@ -11,4 +11,14 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true, on: :create, length: { minimum: 3 }
+
+  after_validation :generate_slug
+
+  def generate_slug
+    self.slug = self.username.parameterize
+  end
+
+  def to_parm
+    self.slug
+  end
 end

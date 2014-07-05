@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   def show
     # binding.pry
     # @user = User.find(params[:id])
-    @posts = @user.posts
+    # @posts = @user.posts
     # @comments = @Comments.find(params[:id])
     # have to have the following line for my setup
-    @post = Post.find(params[:id])
+    # @post = Post.find_by slug: params[:id]
   end
 
   def create
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by slug: params[:id]
   end
 
   def require_same_user

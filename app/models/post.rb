@@ -8,11 +8,11 @@ class Post < ActiveRecord::Base
   has_many :categories, through: :post_categories
   has_many :votes, as: :voteable
 
-  after_validation :generate_slug
-
   validates :title, presence: true
   validates :url, presence: true, uniqueness: true
   validates :description, presence: true, length: { minimum: 3 }
+
+  after_validation :generate_slug
 
   # might want to relocate this, application controller?
   def total_votes

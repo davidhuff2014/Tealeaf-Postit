@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   def show
     # binding.pry
     # @user = User.find(params[:id])
-    # @posts = @user.posts
+    @posts = @user.posts
     # @comments = @Comments.find(params[:id])
     # have to have the following line for my setup
-    # @post = Post.find_by slug: params[:id]
+    @post = Post.find_by slug: params[:id]
   end
 
   def create

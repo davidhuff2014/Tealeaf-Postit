@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     self.slug = self.username.parameterize
   end
 
-  def to_parm
+  def to_param
     self.slug
   end
 end

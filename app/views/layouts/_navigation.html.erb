@@ -34,8 +34,8 @@
   <% end %>
   <ul class='dropdown-menu'>
   <!-- just done in a single line the above with a do could have been used -->
-  <li><%= link_to '<i class="icon-pencil"></i>Edit Profile'.html_safe, edit_user_path(current_user.id) %></li>
-  <li><%= link_to '<i class="icon-user"></i>View Profile'.html_safe, user_path(current_user.id) %></li>
+  <li><%= link_to '<i class="icon-pencil"></i>Edit Profile'.html_safe, edit_user_path(current_user) %></li>
+  <li><%= link_to '<i class="icon-user"></i>View Profile'.html_safe, user_path(current_user) %></li>
     <li><%= link_to '<i class="icon-circle-arrow-left"></i>Logout'.html_safe, logout_path %></li>
     </ul>
   </div>

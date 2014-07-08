@@ -22,8 +22,7 @@
     <% end %>
     <br/>
     <span class='quiet'>by</span> <%= link_to comment.creator.username, user_path(comment.creator) %>
-    <!-- <small>on <%#= comment.created_at %></small> -->
-    <small>on <%= comment.created_at.to_formatted_s(:long) %></small>
-    <!-- <small>at <%#= display_datetime(comment.created_at) %></small> -->
+    <!-- <small>on <%#= comment.created_at.to_formatted_s(:long) %></small> -->
+    <small>at <%= display_datetime(comment.created_at) %></small>
   </div>  
 </div>  

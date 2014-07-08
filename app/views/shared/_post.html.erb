@@ -20,10 +20,9 @@
     <p><%= post.description %></p>
     <p>
     <%# = binding.pry %>
-    <% #TODO DO NOT LEAVE THE FOLLOWING LINE IN PRODUCTION %>
       <span class='quiet'>posted by</span> <%= link_to post.creator.username, user_path(post.creator) %>
-      <small>on  <%= post.created_at.to_formatted_s(:long) %></small>
-      <!-- <small>at <%#= display_datetime(post.created_at) %></small> -->
+      <!-- <small>on  <%#= post.created_at.to_formatted_s(:long) %></small> -->
+      <small>at <%= display_datetime(post.created_at) %></small>
     </p>
     <small>
       <span>

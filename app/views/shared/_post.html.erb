@@ -1,4 +1,7 @@
 <div class='row'>
+  <div id='post_vote_error_<%= post.slug %>' class='alert alert-error' style='display: none'>
+    <%= current_user.username %>, you can only vote for the '<%= post.title %>' post one time.
+  </div>
   <div class='span0 well text-center'>
   <% if logged_in? %>
     <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>

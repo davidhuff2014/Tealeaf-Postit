@@ -1,5 +1,6 @@
 <% if @vote.valid? %>
 $('#comment_<%= @comment.id %>_votes').html('<%= @comment.total_votes %> Votes');
 <% else %>
-  alert("<%= @current_user.username %>, you can only vote for the '<%= @comment.body %>' comment one time.");
+  // alert("<%= @current_user.username %>, you can only vote for the '<%= @comment.body %>' comment one time.");
+  $('#comment_vote_error_<%= @comment.id %>').show()
 <% end %>

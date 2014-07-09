@@ -1,5 +1,8 @@
 <% show_post ||= false %>
 <div class='row'>
+  <div id='comment_vote_error_<%= comment.id %>' class='alert alert-error' style='display: none'>
+    <%= current_user.username %>, you can only vote for the '<%= comment.body %>' comment one time.
+  </div>
   <div class='span0 well text-center'>
   <% if logged_in? %>
     <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>

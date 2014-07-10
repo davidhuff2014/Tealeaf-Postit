@@ -14,6 +14,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '= 3.0.1' # forcing version see next line
 # gem 'bcrypt' # '=3.1.7' was not recognized
+# my gem
+gem 'voteable_dave_jul', '>= 0.0.2'
 
 group :doc do
   gem 'sdoc', require: false

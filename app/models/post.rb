@@ -2,7 +2,9 @@
 
 # setting up relationship to tables note the class_name
 class Post < ActiveRecord::Base
-  include Voteable
+  # include Voteable
+  # now in gem
+  include VoteableDaveJul
 
   belongs_to :creator, foreign_key: 'user_id', class_name: 'User'
   has_many :comments

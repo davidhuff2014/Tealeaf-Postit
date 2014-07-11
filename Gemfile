@@ -1,3 +1,4 @@
+# encoding: UTF-8
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
@@ -16,6 +17,12 @@ gem 'bcrypt-ruby', '= 3.0.1' # forcing version see next line
 # gem 'bcrypt' # '=3.1.7' was not recognized
 # my gem
 gem 'voteable_dave_jul', '>= 0.0.2'
+# to use local gem * I think this has to be an absolute path
+# do not forget config/application.rb
+# "config.autoload_paths += %W(#{config.root}/lib)"
+# or maybe this would work instead, after path: ?
+# "%W(#{config.root}/lib)"
+# gem 'voteable_dave_jul', path: '/Sites/site_name/lib'
 
 group :doc do
   gem 'sdoc', require: false

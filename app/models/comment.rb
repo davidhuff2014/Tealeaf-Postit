@@ -2,9 +2,10 @@
 
 # forms the association to both post and user
 class Comment < ActiveRecord::Base
-  # include Voteable
+  include Voteable
+  # has_many :votes, as: :voteable
   # now in gem
-  include VoteableDaveJul
+  # include VoteableDaveJul
 
   belongs_to :creator, foreign_key: 'user_id', class_name: 'User'
   belongs_to :post

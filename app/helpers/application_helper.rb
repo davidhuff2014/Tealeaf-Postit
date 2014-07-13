@@ -6,8 +6,6 @@ module ApplicationHelper
     str.starts_with?('http://') ? str : "http://#{str}"
   end
 
-  # this helper isn't utilized I prefer
-  # using to_formatted_s(:long)
   def display_datetime(dt)
     dt = dt.in_time_zone(current_user.time_zone) if logged_in? && !current_user.time_zone.blank?
     dt.strftime('%m/%d/%Y %l:%M%P %Z')

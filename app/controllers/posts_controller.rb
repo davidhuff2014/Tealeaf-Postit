@@ -4,6 +4,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :vote]
   before_action :require_user, except: [:index, :show]
+  before_action :require_creator, only: [:edit, :update]
   # 1. set up instance varialbe for action
   # 2. redirect based on some condition
 
@@ -49,7 +50,7 @@ class PostsController < ApplicationController
 
   def edit  
     # this is all my code!
-    if current_user == @post.creator
+    if current_user == @post.creator || logged_in? && current_user.admin?
       flash[:notice] = 'You are allowed to edit this post.'
     else
       flash[:alert] = 'You are not the creator of this post and cannot edit it.'
@@ -91,5 +92,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find_by slug: params[:id]
+  end
+
+  def require_creator
+    access_denied unless logged_in? && current_user == @post.creator || logged_in? && current_user.admin?
   end
 end

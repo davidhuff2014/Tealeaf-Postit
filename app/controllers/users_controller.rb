@@ -67,7 +67,7 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user
+    if current_user != @user || logged_in? && current_user.admin?
       flash[:error] = 'You do not have authorization to perform this action'
       redirect_to root_path
     end

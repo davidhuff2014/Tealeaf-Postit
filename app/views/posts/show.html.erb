@@ -2,7 +2,7 @@
 <h4>Hi there, you're viewing <%= link_to @post.title, fix_url(@post.url) %></h4>
 
 <%# if logged_in? %>
-<% if logged_in? && current_user.id == @post.user_id # my solution I wanted creator to have edit ability %>
+<% if logged_in? && current_user.id == @post.user_id || logged_in? && current_user.admin? # my solution I wanted creator to have edit ability %>
   <p class='pull-right'>
    [<%= link_to 'edit this post', edit_post_path(@post) %>]
   </p>

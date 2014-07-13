@@ -30,11 +30,11 @@ class UsersController < ApplicationController
       # flash[:notice] = 'You are registered.'
       session[:user_id] = @user.id # extra credit
       flash[:notice] = "Welcome, #{@user.username} you are now registered and logged in!"
-      redirect_to root_path
+      render :admin
+      # redirect_to root_path
     else
       # render :new
     end
-    render :admin
   end
 
   def edit

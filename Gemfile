@@ -19,7 +19,6 @@ gem 'bcrypt-ruby', '= 3.0.1' # forcing version see next line
 gem 'voteable_dave_jul', '>= 0.0.3'
 # to use local gem has to be an absolute path
 # gem 'voteable_dave_jul', '>= 0.0.3', path: /home/huffd/Sites/voteable-gem
-
 # do not forget config/application.rb
 # "config.autoload_paths += %W(#{config.root}/lib)"
 

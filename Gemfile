@@ -21,6 +21,7 @@ gem 'voteable_dave_jul', '>= 0.0.3'
 # gem 'voteable_dave_jul', '>= 0.0.3', path: /home/huffd/Sites/voteable-gem
 # do not forget config/application.rb
 # "config.autoload_paths += %W(#{config.root}/lib)"
+gem 'sluggable_dave_jul', '>= 0.0.1'
 
 group :doc do
   gem 'sdoc', require: false

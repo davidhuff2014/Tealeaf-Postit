@@ -2,7 +2,8 @@
 
 # setting up relationships to both posts and comments
 class User < ActiveRecord::Base
-  include Sluggable
+  # include Sluggable
+  include SluggableDaveJul
 
   has_many :posts
   has_many :comments

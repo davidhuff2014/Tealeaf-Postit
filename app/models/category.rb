@@ -2,7 +2,8 @@
 
 # setting up category relationships and validation
 class Category < ActiveRecord::Base
-  include Sluggable
+  # include Sluggable
+  include SluggableDaveJul
 
   has_many :post_categories
   has_many :posts, through: :post_categories

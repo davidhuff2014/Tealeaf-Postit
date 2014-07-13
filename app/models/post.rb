@@ -2,7 +2,8 @@
 
 # setting up relationship to tables note the class_name
 class Post < ActiveRecord::Base
-  include Sluggable
+  # include Sluggable
+  include SluggableDaveJul
 
   # include Voteable
   # has_many :votes, as: :voteable

@@ -15,21 +15,23 @@ class PostsController < ApplicationController
 
     # exposes API
     # respond_to do |format|
-    #   format.html
-    #   format.json { render json: @posts }
-    #   format.html { render xml: @posts }
+      # http://localhost:3000/posts.html
+      # format.html # default display
+       
+      # http://localhost:3000/posts.json
+      # format.json # this one uses index.json.jbuilder
+
+      # http://localhost:3000/posts.json
+      # format.json { render json: @posts } # renders all
+
+      # http://localhost:3000/posts.xml
+      # format.xml { render xml: @posts } # renders all
     # end
   end
 
   def show
     @comment = Comment.new
 
-    # exposes API
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render json: @post }
-    #   format.html { render xml: @post }
-    # end
   end
 
   def new

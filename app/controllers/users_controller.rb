@@ -6,6 +6,10 @@ class UsersController < ApplicationController
   # before_action :require_user, except: [:new, :create, :show]
   before_action :require_same_user, only: [:edit, :update]
 
+  def admin
+    render :admin
+  end
+
   def new
     @user = User.new
   end
@@ -28,8 +32,9 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome, #{@user.username} you are now registered and logged in!"
       redirect_to root_path
     else
-      render :new
+      # render :new
     end
+    render :admin
   end
 
   def edit

@@ -30,10 +30,10 @@ class UsersController < ApplicationController
       # flash[:notice] = 'You are registered.'
       session[:user_id] = @user.id # extra credit
       flash[:notice] = "Welcome, #{@user.username} you are now registered and logged in!"
-      render :admin
-      # redirect_to root_path
+      # render :admin # only used to force admin script to run
+      redirect_to root_path
     else
-      # render :new
+      render :new
     end
   end
 

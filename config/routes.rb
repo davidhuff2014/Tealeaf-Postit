@@ -9,6 +9,8 @@ PostitTemplate::Application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  get '/pin', to: 'sessions#pin'
+  post '/pin', to: 'sessions#pin'
 
   # get '/posts', to: 'posts#index'
   # get '/posts/:id', to: 'posts#show'
@@ -23,7 +25,7 @@ PostitTemplate::Application.routes.draw do
     end
 
     # collection do # to list all
-    #   get 'archives' #/posts/archives 
+    #   get 'archives' #/posts/archives
     # end
 
     resources :comments, only: [:create] do
@@ -36,5 +38,3 @@ PostitTemplate::Application.routes.draw do
   resources :categories, only: [:create, :new, :show]
   resources :users, only: [:create, :show, :edit, :update]
 end
-
-

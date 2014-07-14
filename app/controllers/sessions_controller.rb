@@ -19,9 +19,17 @@ class SessionsController < ApplicationController
 
     # do it in this order so a nil user cannot be entered
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      flash[:notice] = "Welcome, #{user.username} you are now logged in!"
-      redirect_to root_path
+      if user.two_factor_auth?
+        # geb a pin
+        user.generate_pin!
+        # send pin to twilio,  sms to user's phone
+        # show pin form
+        redirect_to pin_path
+      else
+        session[:user_id] = user.id
+        flash[:notice] = "Welcome, #{user.username} you are now logged in!"
+        redirect_to root_path
+      end
     else
       flash[:error] = 'Something is wrong with your username or password.'
       redirect_to register_path
@@ -32,5 +40,11 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = 'You have logged out!'
     redirect_to root_path
+  end
+
+  def pin
+    if request.post?
+
+    end
   end
 end

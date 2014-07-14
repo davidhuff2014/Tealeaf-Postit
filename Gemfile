@@ -22,6 +22,7 @@ gem 'voteable_dave_jul', '>= 0.0.3'
 # do not forget config/application.rb
 # "config.autoload_paths += %W(#{config.root}/lib)"
 gem 'sluggable_dave_jul', '>= 0.0.1'
+gem 'twilio-ruby'
 
 group :doc do
   gem 'sdoc', require: false

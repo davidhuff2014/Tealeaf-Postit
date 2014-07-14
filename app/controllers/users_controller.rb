@@ -10,14 +10,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show
-    # binding.pry
-    # @user = User.find(params[:id])
-    # @posts = @user.posts
-    # @comments = @Comments.find(params[:id])
-    # have to have the following line for my setup
-    # @post = Post.find_by slug: params[:id]
-  end
+  def show;  end
 
   def create
     @user = User.new(user_params)
@@ -26,7 +19,6 @@ class UsersController < ApplicationController
       # flash[:notice] = 'You are registered.'
       session[:user_id] = @user.id # extra credit
       flash[:notice] = "Welcome, #{@user.username} you are now registered and logged in!"
-      # render :admin # only used to force admin script to run
       redirect_to root_path
     else
       render :new
@@ -42,7 +34,7 @@ class UsersController < ApplicationController
     # if current_user.id == @user.id
     #   flash[:notice] = 'You are allowed to edit this user.'
     # else
-    #   flash[:alert] = 'You are not the creator of this user and cannot edit it.'
+    #   flash[:alert] = 'You are not the creator of this user and cannot edit.'
     #   redirect_to posts_path
     # end
   end
@@ -54,7 +46,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       render :edit
-    end    
+    end
   end
 
   private

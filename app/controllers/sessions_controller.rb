@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     # 3. if so, log it
     # 4. if not, error message
 
-    # user = User.where(username: params[:username]).first # not used only gets the first
+    # user = User.where(username: params[:username]).first # only get the first
     # also returns an array
     user = User.find_by(username: params[:username])
 

@@ -4,9 +4,8 @@
 class CommentsController < ApplicationController
   before_action :require_user
   before_action :set_post
-  
-  def create
 
+  def create
     # @post.creator = User.first  # TODO: only until we have authentication
     # @comment = Comment.new(params.require(:comment).permit(:body))
     @comment = @post.comments.build(params.require(:comment).permit(:body))

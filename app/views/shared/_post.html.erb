@@ -24,7 +24,6 @@
     <h4><%= link_to post.title, fix_url(post.url) %></h4>
     <p><%= post.description %></p>
     <p>
-    <%# = binding.pry %>
       <span class='quiet'>posted by</span> <%= link_to post.creator.username, user_path(post.creator) %>
       <!-- <small>on  <%#= post.created_at.to_formatted_s(:long) %></small> -->
       <small>at <%= display_datetime(post.created_at) %></small>
@@ -32,7 +31,6 @@
     <small>
       <span>
         <%= link_to("#{post.comments.size} comments", post_path(post)) %>
-        <%# if logged_in? %>
         <% if logged_in? && current_user.id == post.user_id || logged_in? && current_user.admin? # my solution I wanted creator to have edit ability %>         
           [<%= link_to 'edit this post', edit_post_path(post) %>]
         <% end %>

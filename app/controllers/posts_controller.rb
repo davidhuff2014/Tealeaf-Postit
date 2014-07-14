@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     # respond_to do |format|
       # http://localhost:3000/posts.html
       # format.html # default display
-       
+
       # http://localhost:3000/posts.json
       # format.json # this one uses index.json.jbuilder
 
@@ -31,7 +31,6 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-
   end
 
   def new
@@ -50,7 +49,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit  
+  def edit
     # this is all my code!
     if current_user == @post.creator || logged_in? && current_user.admin?
       flash[:notice] = 'You are allowed to edit this post.'
@@ -71,8 +70,7 @@ class PostsController < ApplicationController
 
   def vote
     @vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
-# binding.pry
-  
+
     respond_to do |format|
       format.html do
         if @vote.valid?

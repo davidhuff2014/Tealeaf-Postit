@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    # turns into booleen 
+    # turns into booleen
     !!current_user
   end
 
@@ -28,12 +28,11 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    access_denied unless logged_in? && current_user.admin?      
+    access_denied unless logged_in? && current_user.admin?
   end
 
   def access_denied
     flash[:error] = 'You cannot do that'
     redirect_to root_path
   end
-
 end

@@ -17,7 +17,7 @@
       <%= f.label :phone, 'Phone Number <small>(numbers only)</small>'.html_safe %>
       <%= f.text_field :phone, maxlength: 9%>
       <%= link_to '#', id: 'two_factor_phone' do  %>
-      <i class='icon-question-sign'></i>
+              <i class="icon-question-sign" id="phone_tool_tip" data-toggle="popover" data-placement="right" title data-content="Please enter your phone number if you want to enable two factor authenication. This means that when you log in, a text message containing a 6 digit pin will be sent to you. You will need this number to continue to log in." data-original-title="Two Factor Authentication"></i>
       <% end %>
     </div>
     <%= f.submit class: 'btn btn-primary' %>

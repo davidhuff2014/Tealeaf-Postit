@@ -6,10 +6,6 @@ class UsersController < ApplicationController
   # before_action :require_user, except: [:new, :create, :show]
   before_action :require_same_user, only: [:edit, :update]
 
-  def admin
-    render :admin
-  end
-
   def new
     @user = User.new
   end

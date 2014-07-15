@@ -137,7 +137,6 @@ GEM
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     voteable_dave_jul (0.0.3)
-    win32console (1.3.2)
     win32console (1.3.2-x86-mingw32)
 
 PLATFORMS

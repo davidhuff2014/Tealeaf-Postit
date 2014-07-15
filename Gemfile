@@ -11,7 +11,7 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
-gem 'turbolinks'
+# gem 'turbolinks' # per Chris turn off turbolinks if you are going to use jquery!!
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '= 3.0.1' # forcing version see next line
 # gem 'bcrypt' # '=3.1.7' was not recognized

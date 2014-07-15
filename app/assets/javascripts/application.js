@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+//=# require turbolinks # turned off because I'm using jquery.turbolinks!!
 //= require_tree .
 //= require bootstrap
 //

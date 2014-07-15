@@ -23,6 +23,7 @@ gem 'voteable_dave_jul', '>= 0.0.3'
 # "config.autoload_paths += %W(#{config.root}/lib)"
 gem 'sluggable_dave_jul', '>= 0.0.1'
 gem 'twilio-ruby'
+gem 'jquery-turbolinks'
 
 group :doc do
   gem 'sdoc', require: false
